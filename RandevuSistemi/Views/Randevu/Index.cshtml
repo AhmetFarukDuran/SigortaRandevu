@@ -1,0 +1,34 @@
+﻿@using RandevuSistemi.Models
+@model List<Randevu>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<table id="tbl1" class="table table-bordered ">
+    <thead>
+        <tr>
+            <th>Randevu ID</th>
+            <th>Kişi Ad</th>
+            <th>Kişi Soyad</th>
+            <th>Randevu Tarih</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Randevuid</td>
+                <td>@x.Kisiler.KisiAd</td>
+                <td>@x.Kisiler.KisiSoyad</td>
+                <td>@x.Tarih</td>
+                <td><a href="/Randevu/RandevuGetir/@x.Randevuid" class="btn btn-warning">Güncelle</a></td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<a href="/Randevu/RandevuAl" class="btn btn-success" style="float; left; margin:1px">Ekle</a>
+<a href="/Randevu/OnaylıRandevu" class="btn btn-success" style="float; left; margin:1px">Onaylı Randevuları Gör</a>

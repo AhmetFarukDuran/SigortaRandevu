@@ -1,0 +1,21 @@
+﻿@model RandevuSistemi.Models.Randevu
+@{
+    ViewBag.Title = "RandevuGetir";
+}
+
+<h2>Randevu Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("RandevuGüncelle", "Randevu", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.Randevuid)
+    @Html.TextBoxFor(x => x.Randevuid, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Kisiid)
+    @Html.TextBoxFor(x => x.Kisiid, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Randevu İsteği Onayla</button>
+}
+
